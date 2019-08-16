@@ -1,0 +1,12 @@
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\SerialPort\SerialPort\bin\Debug\OCRSerialPort.exe.config
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\SerialPort\SerialPort\bin\Debug\OCRSerialPort.exe
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\SerialPort\SerialPort\bin\Debug\OCRSerialPort.pdb
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\SerialPort\SerialPort\bin\Debug\asprise-ocr-api.dll
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\SerialPort\SerialPort\bin\Debug\asprise-ocr-api.pdb
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\SerialPort\SerialPort\bin\Debug\asprise-ocr-api.xml
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\SerialPort\SerialPort\obj\Debug\OCRSerialPort.csprojResolveAssemblyReference.cache
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\SerialPort\SerialPort\obj\Debug\OCRSerialPort.Form1.resources
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\SerialPort\SerialPort\obj\Debug\OCRSerialPort.Properties.Resources.resources
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\SerialPort\SerialPort\obj\Debug\OCRSerialPort.csproj.GenerateResource.Cache
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\SerialPort\SerialPort\obj\Debug\OCRSerialPort.exe
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\SerialPort\SerialPort\obj\Debug\OCRSerialPort.pdb

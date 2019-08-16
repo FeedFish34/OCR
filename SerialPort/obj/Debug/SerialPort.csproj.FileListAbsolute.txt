@@ -1,0 +1,17 @@
+c:\users\administrator\documents\visual studio 2015\Projects\SerialPort\SerialPort\bin\Debug\SerialPort.exe.config
+c:\users\administrator\documents\visual studio 2015\Projects\SerialPort\SerialPort\bin\Debug\SerialPort.exe
+c:\users\administrator\documents\visual studio 2015\Projects\SerialPort\SerialPort\bin\Debug\SerialPort.pdb
+c:\users\administrator\documents\visual studio 2015\Projects\SerialPort\SerialPort\bin\Debug\AForge.Controls.dll
+c:\users\administrator\documents\visual studio 2015\Projects\SerialPort\SerialPort\bin\Debug\AForge.dll
+c:\users\administrator\documents\visual studio 2015\Projects\SerialPort\SerialPort\bin\Debug\AForge.Imaging.dll
+c:\users\administrator\documents\visual studio 2015\Projects\SerialPort\SerialPort\bin\Debug\AForge.Video.DirectShow.dll
+c:\users\administrator\documents\visual studio 2015\Projects\SerialPort\SerialPort\bin\Debug\AForge.Video.dll
+c:\users\administrator\documents\visual studio 2015\Projects\SerialPort\SerialPort\obj\Debug\SerialPort.csprojResolveAssemblyReference.cache
+c:\users\administrator\documents\visual studio 2015\Projects\SerialPort\SerialPort\obj\Debug\SerialPort.Form1.resources
+c:\users\administrator\documents\visual studio 2015\Projects\SerialPort\SerialPort\obj\Debug\SerialPort.Properties.Resources.resources
+c:\users\administrator\documents\visual studio 2015\Projects\SerialPort\SerialPort\obj\Debug\SerialPort.csproj.GenerateResource.Cache
+c:\users\administrator\documents\visual studio 2015\Projects\SerialPort\SerialPort\obj\Debug\SerialPort.exe
+c:\users\administrator\documents\visual studio 2015\Projects\SerialPort\SerialPort\obj\Debug\SerialPort.pdb
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\SerialPort\SerialPort\bin\Debug\asprise-ocr-api.dll
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\SerialPort\SerialPort\bin\Debug\asprise-ocr-api.pdb
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\SerialPort\SerialPort\bin\Debug\asprise-ocr-api.xml
