@@ -18,6 +18,7 @@ namespace OCRSerialPort
     public partial class Form1 : Form
     {
         OCRSerialDevice ocr = new OCRSerialDevice();
+        BiuTCPClientPort ClientPort = null;
         public Form1()
         {
             InitializeComponent();
@@ -30,10 +31,10 @@ namespace OCRSerialPort
         {
             try
             {
-                if (ocr != null)
-                {
-                    ocr.StartWorking();
-                }
+                string IP = txtIp.Text;
+                int Port = Convert.ToInt32(txtPort.Text);
+                ClientPort = new BiuTCPClientPort(IP, Port);
+                ClientPort.Open();
                 // 枚举所有视频输入设备
                 videoDevices = new FilterInfoCollection(FilterCategory.VideoInputDevice);
 
@@ -90,30 +91,31 @@ namespace OCRSerialPort
             btnPhoto.Enabled = false;
             try
             {
-                picName = GetImagePath() + "\\" + DateTime.Now.ToString("yyyyMMddHHmmssfff") + ".jpg";
+                //picName = GetImagePath() + "\\" + DateTime.Now.ToString("yyyyMMddHHmmssfff") + ".jpg";
+                picName = GetImagePath() + "\\" + "xiaosy.jpg";
                 #region 拍照生成图片
-                if (videoSourcePlayer1.IsRunning)
-                {
-                    BitmapSource bitmapSource = System.Windows.Interop.Imaging.CreateBitmapSourceFromHBitmap(
-                                    videoSourcePlayer1.GetCurrentVideoFrame().GetHbitmap(),
-                                    IntPtr.Zero,
-                                     Int32Rect.Empty,
-                                    BitmapSizeOptions.FromEmptyOptions());
-                    PngBitmapEncoder pE = new PngBitmapEncoder();
-                    pE.Frames.Add(BitmapFrame.Create(bitmapSource));
-                    using (Stream stream = File.Create(picName))
-                    {
-                        pE.Save(stream);
-                    }
-                    //拍照完成后关摄像头并刷新同时关窗体
-                    if (videoSourcePlayer1 != null && videoSourcePlayer1.IsRunning)
-                    {
-                        videoSourcePlayer1.SignalToStop();
-                        videoSourcePlayer1.WaitForStop();
-                        videoSourcePlayer1.Visible = false;
-                    }
+                //if (videoSourcePlayer1.IsRunning)
+                //{
+                //    BitmapSource bitmapSource = System.Windows.Interop.Imaging.CreateBitmapSourceFromHBitmap(
+                //                    videoSourcePlayer1.GetCurrentVideoFrame().GetHbitmap(),
+                //                    IntPtr.Zero,
+                //                     Int32Rect.Empty,
+                //                    BitmapSizeOptions.FromEmptyOptions());
+                //    PngBitmapEncoder pE = new PngBitmapEncoder();
+                //    pE.Frames.Add(BitmapFrame.Create(bitmapSource));
+                //    using (Stream stream = File.Create(picName))
+                //    {
+                //        pE.Save(stream);
+                //    }
+                //    //拍照完成后关摄像头并刷新同时关窗体
+                //    if (videoSourcePlayer1 != null && videoSourcePlayer1.IsRunning)
+                //    {
+                //        videoSourcePlayer1.SignalToStop();
+                //        videoSourcePlayer1.WaitForStop();
+                //        videoSourcePlayer1.Visible = false;
+                //    }
 
-                }
+                //}
                 #endregion
 
                 #region 根据图片获取图片的文字
@@ -129,9 +131,13 @@ namespace OCRSerialPort
                 string OCRNum = System.Text.RegularExpressions.Regex.Replace(ORCString, @"[^0-9]+", "");
                 if (!string.IsNullOrEmpty(OCRNum))
                 {
-                    ocr.AnswerList.Add(ASTMCommon.cSTX_2.ToString() + OCRNum+ASTMCommon.cETX_3.ToString());
-                    ocr.AnswerList.Add(ASTMCommon.cEOT_4.ToString());
-                    ocr.SendEnqCommand(100);
+                    string Msg = ASTMCommon.cENQ_5.ToString() + ASTMCommon.cSTX_2.ToString() + OCRNum + ASTMCommon.cETX_3.ToString() + ASTMCommon.cEOT_4.ToString();
+                    byte[] SendMsg = Encoding.Default.GetBytes(Msg);
+                    LogRevMsg.LogText("发送", Msg);
+                    ClientPort.Send(SendMsg);
+                    //ocr.AnswerList.Add(ASTMCommon.cSTX_2.ToString() + OCRNum+ASTMCommon.cETX_3.ToString());
+                    //ocr.AnswerList.Add(ASTMCommon.cEOT_4.ToString());
+                    //ocr.SendEnqCommand(100);
                 }
 
                 #endregion

@@ -94,6 +94,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Sqlite数据库\ASTMDAO.cs" />
     <Compile Include="Sqlite数据库\ConnectionManager.cs" />
+    <Compile Include="串口通讯数据类\BiuTCPClientPort.cs" />
     <Compile Include="串口通讯数据类\OCRSerialDevice.cs" />
     <Compile Include="串口通讯数据类\ASTMCommon.cs" />
     <Compile Include="串口通讯数据类\BiuDevice.cs" />
