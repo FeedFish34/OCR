@@ -91,31 +91,31 @@ namespace OCRSerialPort
             btnPhoto.Enabled = false;
             try
             {
-                //picName = GetImagePath() + "\\" + DateTime.Now.ToString("yyyyMMddHHmmssfff") + ".jpg";
-                picName = GetImagePath() + "\\" + "xiaosy.jpg";
+                picName = GetImagePath() + "\\" + DateTime.Now.ToString("yyyyMMddHHmmssfff") + ".jpg";
+                //picName = GetImagePath() + "\\" + "xiaosy.jpg";
                 #region 拍照生成图片
-                //if (videoSourcePlayer1.IsRunning)
-                //{
-                //    BitmapSource bitmapSource = System.Windows.Interop.Imaging.CreateBitmapSourceFromHBitmap(
-                //                    videoSourcePlayer1.GetCurrentVideoFrame().GetHbitmap(),
-                //                    IntPtr.Zero,
-                //                     Int32Rect.Empty,
-                //                    BitmapSizeOptions.FromEmptyOptions());
-                //    PngBitmapEncoder pE = new PngBitmapEncoder();
-                //    pE.Frames.Add(BitmapFrame.Create(bitmapSource));
-                //    using (Stream stream = File.Create(picName))
-                //    {
-                //        pE.Save(stream);
-                //    }
-                //    //拍照完成后关摄像头并刷新同时关窗体
-                //    if (videoSourcePlayer1 != null && videoSourcePlayer1.IsRunning)
-                //    {
-                //        videoSourcePlayer1.SignalToStop();
-                //        videoSourcePlayer1.WaitForStop();
-                //        videoSourcePlayer1.Visible = false;
-                //    }
+                if (videoSourcePlayer1.IsRunning)
+                {
+                    BitmapSource bitmapSource = System.Windows.Interop.Imaging.CreateBitmapSourceFromHBitmap(
+                                    videoSourcePlayer1.GetCurrentVideoFrame().GetHbitmap(),
+                                    IntPtr.Zero,
+                                     Int32Rect.Empty,
+                                    BitmapSizeOptions.FromEmptyOptions());
+                    PngBitmapEncoder pE = new PngBitmapEncoder();
+                    pE.Frames.Add(BitmapFrame.Create(bitmapSource));
+                    using (Stream stream = File.Create(picName))
+                    {
+                        pE.Save(stream);
+                    }
+                    //拍照完成后关摄像头并刷新同时关窗体
+                    if (videoSourcePlayer1 != null && videoSourcePlayer1.IsRunning)
+                    {
+                        videoSourcePlayer1.SignalToStop();
+                        videoSourcePlayer1.WaitForStop();
+                        videoSourcePlayer1.Visible = false;
+                    }
 
-                //}
+                }
                 #endregion
 
                 #region 根据图片获取图片的文字
